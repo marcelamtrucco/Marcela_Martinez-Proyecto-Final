@@ -1,0 +1,65 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5"></div>
+</header>
+   <section class="section" id="trainers">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading">
+                    <h2>Nuestros <em> Entrenadores</em></h2>
+                    <img src="{% static 'assets/images/line-dec.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="trainer-item">
+                    <div class="image-thumb">
+                        <img src="{% static 'assets/images/ZUMBA.jpg' %}" alt="">
+                    </div>
+                    <div class="down-content">
+                        <center>
+                        <span>Entrenador de Zumba</span>
+                        <h4>Hector Y.</h4>
+                        <p> Veni a Entrenar al mejor ritmo. La Zumba combina fitness con diversion</p>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="trainer-item">
+                    <div class="image-thumb">
+                        <img src="{% static 'assets/images/m_Yoga.jpg' %}" alt="">
+                    </div>
+                    <div class="down-content">
+                        <center>
+                        <span>Entrenadora de Yoga</span>
+                        <h4>Anita Laprida</h4>
+                        <p>Namaste a todos! Acompañame en las mejores clases de Yoga para armonizarte.</p>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="trainer-item">
+                    <div class="image-thumb">
+                        <img src="{% static 'assets/images/Spinning.jpg' %}" alt="">
+                    </div>
+                    <div class="down-content">
+                        <center>
+                        <span>Entrenador de Spinning</span>
+                        <h4>Pablo D. Newman </h4>
+                            <p> Mejora tu estado aerobico en mis clases de Spinning. Apto para todos los estados y objetivos</p>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</br></br>
+</br></br>
+{% endblock %}

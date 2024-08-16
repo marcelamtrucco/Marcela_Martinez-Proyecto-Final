@@ -1,0 +1,36 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+     <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5"></div>
+      </header>    
+     <br></br>
+       <div class="container">
+            <div class="row">
+                <center>
+                  <h3> EDITAR PERFIL </h3>               
+                        <br></br>
+                        <form method="POST" action="" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <table>
+                            {{ form.as_table }}
+                            </table>
+                            <div class="mb-3 form-check">
+                            </div>
+                            <br></br>   
+                            <a class=" btn btn-secondary" href="{% url 'cambiarpass' %}" >CAMBIAR CONTRASEÑA</a>
+                            <button type="submit" class="btn btn-secondary">ACTUALIZAR</button>
+                            <br></br>                           
+                            <br></br>
+                          </form>
+                        <br></br>
+                        <br></br>
+                        
+                </center>
+                    </div>
+            </div>    
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>  
+{% endblock %}   

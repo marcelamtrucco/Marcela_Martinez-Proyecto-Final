@@ -1,0 +1,39 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+    </br></div>
+</header>
+<section>
+    <center>
+    </br>
+        <p><h2>Caracteristicas de la pose: {{ nombre }} </h2></p>  
+                        </br>     
+            {% for pose in poses %}
+            {% if nombre == pose.name %}
+                        </br>
+                <p><h5> {{ pose.benefit }} </h5></p>
+                            </br> </br>
+                <p><h5> {{ pose.description }} </h5></p>
+                        </br> 
+            <img src="{{ pose.image_url }}" alt=" NO SE ENCONTRO LA IMAGEN">
+                       </br> </br>
+                        </br> </br>
+            {% endif %}        
+            {% endfor %}        
+</center>
+</section>
+</br> </br>
+</br> </br>
+</br> </br>
+</br> </br>
+</br> </br>
+</br> </br>
+</br> </br>
+</br> </br>
+</br> </br>
+</br> </br>
+
+{% endblock %}          

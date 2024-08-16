@@ -1,0 +1,27 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+    </br>
+    </div>
+</header>
+<center>
+<div class="container">
+</br>
+    <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <br></br>
+            <h2>Confirma la Eliminación de la reserva de:   {{ object.id_socio }}</h2>
+                            <br></br>
+        <button class="btn btn-danger" type="submit">ELIMINAR</button> <a class="btn btn-success" href="{% url 'inicio' %}">VOLVER</a>
+    </form>
+</div>
+</center>
+        <br></br>
+        <br></br>
+        <br></br> 
+        <br></br>
+        <br></br>
+        <br></br>  
+{% endblock %}   

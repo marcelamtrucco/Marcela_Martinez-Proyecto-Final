@@ -1,0 +1,30 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+    </br>
+    </div>
+</header>
+<center>
+<div class="container">
+</br>
+    <h3>MODIFICAR LA CLASE RESERVADA</h3>
+     <br></br>
+    <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+                </br>
+            {{ form.as_p }}
+                </br>
+        <a class="btn btn-danger" href="{% url 'inicio' %}">CANCELAR</a>
+        <button class="btn btn-success" type="submit">GUARDAR</button>
+    </form>
+</div>
+</center>
+        <br></br>
+        <br></br>
+        <br></br> 
+        <br></br>
+        <br></br>
+        <br></br>  
+{% endblock %}   

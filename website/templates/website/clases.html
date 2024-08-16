@@ -1,0 +1,80 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+<header class="bg-dark py-5">
+  <div class="container px-4 px-lg-5 my-5">
+  </br>
+  </div>
+</header>
+<section class="section" id="our-classes">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading">
+                    <h2>Nuestras <em> Clases</em></h2>
+                    <img src="{% static 'assets/images/line-dec.png' %}" alt="">                    
+                </div>
+            </div>
+        </div>
+        <div class="row" id="tabs">
+          <div class="col-lg-4">
+            <ul>
+              <li><a href='#tabs-1'><img src="{% static 'assets/images/tabs-first-icon.png' %}" alt="">Clases de Yoga</a></li>
+              <li><a href='#tabs-2'><img src="{% static 'assets/images/tabs-first-icon.png' %}" alt="">Clases de Pilates</a></a></li>
+              <li><a href='#tabs-3'><img src="{% static 'assets/images/tabs-first-icon.png' %}" alt="">Clases de Zumba</a></a></li>
+              <li><a href='#tabs-4'><img src="{% static 'assets/images/tabs-first-icon.png' %}" alt="">Clases de Spinning</a></a></li>
+              <li><a href='#tabs-5'><img src="{% static 'assets/images/tabs-first-icon.png' %}" alt="">Clases de Musculación</a></a></li>
+              {% if user.is_authenticated %}
+              <div class="main-rounded-button"><a href="{% url 'reserva' %}">RESERVA CLASE</a></div>
+              </br></br> 
+              <div class="main-rounded-button"><a href="{% url 'listar' %}">VER CLASES RESERVADAS</a></div> 
+              {% else %} 
+              <div class="main-rounded-button"><a >RESERVA CLASE: Se requiere ser usuario para reservar</a></div>           
+              {% endif %}
+            </ul>
+          </div>
+          <div class="col-lg-8">
+            <section class='tabs-content'>
+            <center>
+              <article id='tabs-1'>
+                <img src="{% static 'assets/images/training-image-02.jpg' %}" alt="Clases de Yoga">
+                {% if user.is_authenticated %}
+              </br>
+                <h4>EL MUNDO DEL YOGA: </h4>
+                <h5>información exclusiva para socios </h5>
+              </br>
+                <a class="btn btn-outline-danger"  href="{% url 'yoga' %}">YOGA</a>
+                {% else %}
+                <h4>Primera Clase de Prueba</h4>  
+                <p><b>Veni a Entrenar con Nosotros. Proba una de las clases sin cargo. Entrenar, nunca fue tan fácil</b></p>
+                {% endif %}
+              </article>
+              <article id='tabs-2'>
+                <img src="{% static 'assets/images/pilates.jpg' %}" alt="Clases de Pilates">
+                <h4>Primera Clase de Prueba</h4>
+                <p><b>Veni a Entrenar con Nosotros. Proba una de las clases sin cargo. Entrenar, nunca fue tan fácil</b></p>
+              </article>
+              <article id='tabs-3'>
+                <img src="{% static 'assets/images/zumba_.jpg' %}" alt="Clases de Zumba">
+                <h4>Primera Clase de Prueba</h4>
+                <p><b>Veni a Entrenar con Nosotros. Proba una de las clases sin cargo. Entrenar, nunca fue tan fácil</b></p>
+              </article>
+              <article id='tabs-4'>
+                <img src="{% static 'assets/images/training-image-04.jpg' %}" alt="Clase de Spining">
+                <h4>Primera Clase de Prueba</h4>
+                <p><b>Veni a Entrenar con Nosotros. Proba una de las clases sin cargo. Entrenar, nunca fue tan fácil</b></p>
+              </article>
+              <article id='tabs-5'>
+                <img src="{% static 'assets/images/training-image-01.jpg' %}" alt="Clases de Musculación">
+                <h4>Primera Clase de Prueba</h4>
+                <p><b>Veni a Entrenar con Nosotros. Proba una de las clases sin cargo. Entrenar, nunca fue tan fácil</b></p>
+              </article>
+              </br></br>
+          </div>
+        </div>
+    </div>
+</center>
+</section>
+</br></br>
+</br></br>
+{% endblock content %}

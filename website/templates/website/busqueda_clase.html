@@ -1,0 +1,54 @@
+{% extends 'website/base.html' %}
+{% block content %}
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+    </br>
+    </div>
+</header>
+<section >
+    <center>
+                        </br></br>
+        <p><h3>Estas buscando la clase: {{ nombre|upper }} </h3></p>
+                        </br></br>
+                {% if clases %}
+                    <ul>
+                                <p><h4> Los dias y horarios de la clase son: </h4></p> 
+                                            {% for clase in clases %}
+                                                    </br>
+                                                    <center>    
+                            {% if clase.codigo|slice:"3:5" == 'lu' and clase.codigo|slice:"6:" == 'ma' %} 
+                                            <p><h4> lunes por la mañana </h4></p>
+                            {% elif clase.codigo|slice:"3:5" == 'lu' and clase.codigo|slice:"6:" == 'tar' %} 
+                                            <p><h4> lunes por la tarde </h4></p>   
+                            {% elif clase.codigo|slice:"3:5" == 'ma' and clase.codigo|slice:"6:" == 'ma' %} 
+                                            <p><h4> martes por la mañana  </h4></p>                                                       
+                            {% elif clase.codigo|slice:"3:5" == 'ma' and clase.codigo|slice:"6:" == 'tar' %} 
+                                            <p><h4> martes por la tarde  </h4></p> 
+                            {% elif clase.codigo|slice:"3:5" == 'mi' and clase.codigo|slice:"6:" == 'ma' %} 
+                                            <p><h4> miércoles por la mañana  </h4></p>  
+                            {% elif clase.codigo|slice:"3:5" == 'mi' and clase.codigo|slice:"6:" == 'tar' %} 
+                                            <p><h4> miércoles por la tarde  </h4></p>    
+                            {% elif clase.codigo|slice:"3:5" == 'ju' and clase.codigo|slice:"6:" == 'ma' %} 
+                                            <p><h4> jueves por la mañana  </h4></p>       
+                            {% elif clase.codigo|slice:"3:5" == 'ju' and clase.codigo|slice:"6:" == 'tar' %} 
+                                            <p><h4> jueves por la tarde </h4></p>       
+                            {% elif clase.codigo|slice:"3:5" == 'vi' and clase.codigo|slice:"6:" == 'ma' %} 
+                                            <p><h4> viernes por la mañana  </h4></p>  
+                            {% elif clase.codigo|slice:"3:5" == 'vi' and clase.codigo|slice:"6:" == 'tar' %} 
+                                            <p><h4> viernes por la tarde  </h4></p>      
+                                                        {%  endif %} 
+                            <h5> con capacidad para {{ clase.capacidad }} personas </h5> 
+                                                    </center>  
+                                                    {% endfor %}    
+                            </ul>
+                {% endif %}
+    </center>        
+</section >
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+{% endblock %}

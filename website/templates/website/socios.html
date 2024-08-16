@@ -1,0 +1,55 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+    </br>
+    </div>
+</header>
+<center>
+<section class="section" id="socios">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading">
+                    <h2>Nuestros <em> Socios</em></h2>
+                    <img src="{% static 'assets/images/line-dec.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                        <div class="image-thumb">
+                            <img src="{% static 'assets/images/pilates.jpg' %}" alt="">
+                            <img src="{% static 'assets/images/yoga_grupal.jpg' %}" alt="">
+                            <img src="{% static 'assets/images/spining.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>    
+        </br></br>
+        {% if request.user.is_staff %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">    
+                    <h3><b>Registrar un Socio</b></h3>
+                    </br>
+                    {% if fomulario.errors %}
+                        <p style= "color: red;" > Datos mal ingresados ,revisar </p>
+                    {% endif %}
+                    <form action="" method="POST" > {% csrf_token %}
+                        <table>
+                            {{ formulario.as_table }}
+                    </table>  
+                    </br>
+                        <input type="submit", value="Enviar"> 
+                    </form>  
+                </div>
+            </div>
+        </div>  
+        {% endif %}         
+</section>
+</center>  
+</br></br>
+</br></br>
+</br></br>
+{% endblock %}

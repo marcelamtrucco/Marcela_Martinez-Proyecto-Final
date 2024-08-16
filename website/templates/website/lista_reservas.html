@@ -1,0 +1,45 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+    </br>
+    </div>
+</header>
+<center>
+<div class="container">
+</br>
+<h3>LISTADO DE CLASES RESERVADAS</h3>
+<br></br>
+<br></br>
+<table class = "table table-bordered">
+    <thead>
+        {% if object_list %} 
+                <tr>
+                    <th id="user">USUARIO</th>
+                    <th id="clase">CLASE</th>
+                    <th id="turno">TURNO</th>
+                    <th id="opciones">Acciones</th>
+                    </tr>
+                    <tr>
+                        {% for reserva in object_list %}
+                    <td> {{ reserva.user }} </td>
+                    <td> {{ reserva.clase }} </td>
+                    <td> {{ reserva.turno }} </td>
+                    <td> <a class="btn btn-primary" href="{% url 'editar' reserva.id %}">EDITAR</a> <a class="btn btn-danger" href="{% url 'eliminar' reserva.id %}">ELIMINAR</a> </td>
+                </tr>
+                {% endfor %}  
+            {% else %}
+                    <h2>No hay registro de clases reservadas por el Usuario</h2>
+            {% endif %}    
+    </thead>
+</table>
+<br></br>
+<a class="btn btn-success" href="{% url 'inicio' %}"><strong>VOLVER</strong></a> 
+</div>
+</center>
+        <br></br>
+        <br></br>
+        <br></br> 
+        <br></br>
+{% endblock %}   

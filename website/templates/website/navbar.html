@@ -1,0 +1,44 @@
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="{% url 'inicio' %}" class="logo">Training<em> Studio</em></a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <br></br>
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="{% url 'about' %}" class="active"><h4><strong> ACERCA DEL SITIO </strong></h4></a></li>
+                        <li class="scroll-to-section"><a href="{% url 'inicio' %}" class="active"><h4><strong> HOME </strong></h4></a></li>
+                        <li class="scroll-to-section"><a href="{% url 'clase' %}" class="active"><h4><strong> CLASES </strong></h4></a></li>
+                        <li class="scroll-to-section"><a href="{% url 'entrenador' %}" class="active"><h4><strong> ENTRENADORES</strong></h4></a></li>
+                        <li class="scroll-to-section"><a href="{% url 'alta_socio' %}" class="active"><h4><strong> SOCIOS </strong></h4></a></li>
+                        <li class="scroll-to-section"><a href="{% url 'horarios' %}" class="active"><h4><strong> HORARIOS </strong></h4></a></li>
+                        {% if user.is_authenticated %}
+                        <form method="POST" action="{% url 'logout' %}"> {% csrf_token %}
+                            <button type="submit"><strong>LOGOUT</strong></button>
+                        </form> 
+                        {% endif %} 
+                    </br>
+            <div class="dropdown"> 
+                <button class="btn btn-outline-primary dropdown-toggle"  type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                 <strong>USUARIO</strong>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {% if user.is_authenticated %}
+                    <img src="{{ request.user.avatar.imagen.url }}" alt="" height="50px" > <strong>{{ request.user.username }} </strong>                    
+                    <a class="dropdown-item" href="{% url 'editarperfil' %}" ><strong>EDITAR PERFIL</strong></a>                    
+                    {% else %} 
+                        <a class="dropdown-item" href="{% url 'login' %}" ><strong>LOGIN</strong></a>
+                        <a class="dropdown-item" href="{% url 'registro' %}" ><strong>REGISTRO</strong></a>
+                    {% endif %} 
+                </div>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** Header Area End ***** -->

@@ -1,0 +1,36 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+    </br></div>
+</header>
+<section>
+</br> </br>
+    <center>
+    <h2>INFOGRAFIA SOBRE YOGA</h2>
+        </br> </br>
+    <form action="{% url 'yogapose'%}">
+    <select name='yoga_pose' class="form-select form-select-lg mb-3" aria-label=".form-select-lg" >
+        <option disabled="true" selected> --POSES --</option>
+                        {% for pose in poses %}
+        <option value="{{ pose.name }}">{{ pose.name }}</option>
+                        {% endfor %}
+      </select>
+      <input type="submit", value= "SELECCIONAR">
+    </form>
+    </center>
+</section>      
+</br> </br>
+</br> </br>
+</br> </br>
+</br> </br>
+</br> </br>
+</br> </br>
+</br> </br>
+</br> </br>
+</br> </br>
+</br> </br>
+</br> </br>
+{% endblock %}  

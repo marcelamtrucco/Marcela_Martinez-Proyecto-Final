@@ -1,0 +1,84 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+
+   <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner" id="top">
+        <video autoplay muted loop id="bg-video">
+            <source src="{% static 'assets/images/gym-video.mp4' %}" type="video/mp4" />
+        </video>
+
+        <div class="video-overlay header-text">
+            <div class="caption">
+                <h6> siempre cerca tuyo</h6>
+                <h2>entrenar <em>nunca fue tan fácil</em></h2>
+                <div class="main-button scroll-to-section">
+                    <a href="{% url 'registro' %}">ASOCIATE AHORA</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+         <!-- ***** Preloader End ***** -->
+       
+      <section>  
+        <center>
+            </br> </br>
+              <h3><b>Buscar una Clase</b></h3>
+                </br></br>
+                      <form action="/website/buscar/" method="GET" > {% csrf_token %}
+                          <input type="text", name="nombre">   
+                          <input type="submit", value="Buscar"> 
+                      </form>  
+        </center>  
+      </section>  
+          <!-- ***** Contact Us Area Starts ***** -->
+         <section class="section" id="contact-us">
+             <div class="container-fluid">
+                 <div class="row">
+                     <div class="col-lg-6 col-md-6 col-xs-12">
+                         <div id="map">
+                           <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3284.648867746694!2d-58.41320522426041!3d-34.587750272960015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzTCsDM1JzE1LjkiUyA1OMKwMjQnMzguMyJX!5e0!3m2!1ses!2sar!4v1721602595245!5m2!1ses!2sar" width="100%" height="600px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                         </div>
+                         
+                     </div>
+                     <div class="col-lg-6 col-md-6 col-xs-12">
+                         <div class="contact-form">
+                             <form id="contact" action="" method="post">
+                               <div class="row">
+                                 <div class="col-md-6 col-sm-12">
+                                   <fieldset>
+                                     <input name="name" type="text" id="name" placeholder="Nombre" required="">
+                                   </fieldset>
+                                 </div>
+                                 <div class="col-md-6 col-sm-12">
+                                   <fieldset>
+                                     <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Email" required="">
+                                   </fieldset>
+                                 </div>
+                                 <div class="col-md-12 col-sm-12">
+                                   <fieldset>
+                                     <input name="subject" type="text" id="subject" placeholder="Tema">
+                                   </fieldset>
+                                 </div>
+                                 <div class="col-lg-12">
+                                   <fieldset>
+                                     <textarea name="message" rows="6" id="message" placeholder="Mensaje" required=""></textarea>
+                                   </fieldset>
+                                 </div>
+                                 <div class="col-lg-12">
+                                   <fieldset>
+                                     <button type="submit" id="form-submit" class="main-button">Enviar </button>
+                                   </fieldset>
+                                 </div>
+                               </div>
+                             </form>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+     
+         <!-- ***** Logo End ***** -->
+         <!-- ***** Contact Us Area Ends ***** -->
+{% endblock %}     
